@@ -1,0 +1,1 @@
+# Use Sprites\import.py to import Pokemon sprites here
