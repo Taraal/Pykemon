@@ -14,4 +14,4 @@ Feel free to clone/contribute/steal whatev.
 
 <br />
 
-> python import.py
+> python spriteImport.py
