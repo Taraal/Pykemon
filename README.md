@@ -6,7 +6,7 @@ Feel free to clone/contribute/steal whatev.
 
 # Install
 
-> pip install -r requirement.txt 
+> pip install -r requirements.txt 
 
 <br />
 
