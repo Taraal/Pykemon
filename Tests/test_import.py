@@ -2,6 +2,8 @@ import pytest
 from os import listdir
 from os.path import isfile, join
 
+exec(open("../Sprites/spriteImport.py").read())
+
 def test_back():
     path = '../Sprites/back/'
     files = [f for f in listdir(path) if isfile(join(path, f))]
