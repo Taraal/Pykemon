@@ -7,7 +7,11 @@ Feel free to clone/contribute/steal whatev.
 # Install
 
 > pip install -r requirement.txt 
+
 <br />
+
 > cd Sprites
+
 <br />
+
 > python import.py
