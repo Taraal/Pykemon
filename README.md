@@ -6,6 +6,6 @@ Feel free to clone/contribute/steal whatev.
 
 # Install
 
-> pip install -r requirement.txt
-> cd Sprites
-> python import.py
+> pip install -r requirement.txt \n
+> cd Sprites \n
+> python import.py \n
