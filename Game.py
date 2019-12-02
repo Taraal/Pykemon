@@ -3,10 +3,10 @@ import time
 import requests
 import json
 
-from BO.Poke import Pokemon
+import pygame
+
 from BO.Player import Player
 
-import pygame
 
 pygame.init()
 
