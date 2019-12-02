@@ -4,26 +4,46 @@ import requests
 import json
 
 from BO.Poke import Pokemon
+from BO.Player import Player
 
 import pygame
 
-def main():
-    pygame.init()
-    pygame.display.set_caption("Pykemon")
+pygame.init()
 
-    screen = pygame.display.set_mode((500,500))
+screen = pygame.display.set_mode((720, 480))
+clock = pygame.time.Clock()
+FPS = 60
 
-    image = pygame.image.load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png")
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
 
-    screen.blit(image, (50,50))
+player = Player()
+running = True
+while running:
+    dt = clock.tick(FPS) / 1000
+    screen.fill(BLACK)
 
-    running = True
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w:
+                player.velocity[1] = -200 * dt
+            elif event.key == pygame.K_s:
+                player.velocity[1] = 200 * dt
+            elif event.key == pygame.K_a:
+                player.velocity[0] = -200 * dt
+            elif event.key == pygame.K_d:
+                player.velocity[0] = 200 * dt
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_w or event.key == pygame.K_s:
+                player.velocity[1] = 0
+            elif event.key == pygame.K_a or event.key == pygame.K_d:
+                player.velocity[0] = 0
 
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
+    player.update()
 
-if __name__ == "__main__":
-    main()
-        
+    screen.blit(player.image, player.rect)
+    pygame.display.update()
+
+quit()
